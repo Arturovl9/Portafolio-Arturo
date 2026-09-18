@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div class="export-bar">
+      <button id="export-pdf-btn" class="export-btn" type="button">Descargar CV en PDF</button>
+    </div>
     <div class="wrap">
 
       <header>
@@ -107,46 +110,48 @@
       <section>
         <h2>Habilidades</h2>
 
-        <div class="pkg-group">
-          <div class="pkg-cat">Sistemas y Cloud</div>
-          <div class="chips">
-            <span class="chip">Linux</span>
-            <span class="chip">Windows Server</span>
-            <span class="chip">Active Directory</span>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Sistemas y Cloud</h3>
+            <div class="tag-list">
+              <span class="tag">Linux</span>
+              <span class="tag">Windows Server</span>
+              <span class="tag">Active Directory</span>
+            </div>
           </div>
-        </div>
 
-        <div class="pkg-group">
-          <div class="pkg-cat">Infraestructura y Redes</div>
-          <div class="chips">
-            <span class="chip">Docker</span>
-            <span class="chip">Proxmox</span>
-            <span class="chip">VLAN</span>
-            <span class="chip">VLSM</span>
+          <div class="info-card">
+            <h3>Infraestructura y Redes</h3>
+            <div class="tag-list">
+              <span class="tag">Docker</span>
+              <span class="tag">Proxmox</span>
+              <span class="tag">VLAN</span>
+              <span class="tag">VLSM</span>
+            </div>
           </div>
-        </div>
 
-        <div class="pkg-group">
-          <div class="pkg-cat">Bases de Datos</div>
-          <div class="chips">
-            <span class="chip">PostgreSQL</span>
-            <span class="chip">SQL</span>
+          <div class="info-card">
+            <h3>Bases de Datos</h3>
+            <div class="tag-list">
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">SQL</span>
+            </div>
           </div>
-        </div>
 
-        <div class="pkg-group">
-          <div class="pkg-cat">Lenguajes</div>
-          <div class="chips">
-            <span class="chip">PHP</span>
-            <span class="chip">Java</span>
+          <div class="info-card">
+            <h3>Lenguajes</h3>
+            <div class="tag-list">
+              <span class="tag">PHP</span>
+              <span class="tag">Java</span>
+            </div>
           </div>
-        </div>
 
-        <div class="pkg-group">
-          <div class="pkg-cat">Herramientas</div>
-          <div class="chips">
-            <span class="chip">Git</span>
-            <span class="chip">GitHub</span>
+          <div class="info-card">
+            <h3>Herramientas</h3>
+            <div class="tag-list">
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+            </div>
           </div>
         </div>
       </section>
@@ -180,5 +185,8 @@
       </footer>
 
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

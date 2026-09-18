@@ -71,6 +71,8 @@ header{gap:16px;}
     margin:0 0 16px;
     padding-bottom:8px;
     border-bottom:2px solid var(--ink);
+    page-break-after:avoid;
+    break-after:avoid-page;
   }
 
   p.lead{
@@ -81,7 +83,11 @@ header{gap:16px;}
   }
 
   /* ---------- EXPERIENCIA / FORMACIÓN ---------- */
-  .entry{margin-bottom:22px;}
+  .entry{
+    margin-bottom:22px;
+    page-break-inside:avoid;
+    break-inside:avoid-page;
+  }
   .entry:last-child{margin-bottom:0;}
   .entry-head{
     display:flex;
@@ -104,7 +110,11 @@ header{gap:16px;}
   .entry-school{font-size:14px;color:var(--muted);}
 
   /* ---------- HABILIDADES (chips) ---------- */
-  .pkg-group{margin-bottom:16px;}
+  .pkg-group{
+    margin-bottom:16px;
+    page-break-inside:avoid;
+    break-inside:avoid-page;
+  }
   .pkg-group:last-child{margin-bottom:0;}
   .pkg-cat{
     font-size:12.5px;
@@ -137,6 +147,8 @@ header{gap:16px;}
     border:1px solid var(--line);
     border-radius:10px;
     padding:18px 20px;
+    page-break-inside:avoid;
+    break-inside:avoid-page;
   }
   .info-card h3{
     font-size:12px;
@@ -146,7 +158,7 @@ header{gap:16px;}
     color:var(--muted);
     margin:0 0 12px;
   }
-  .lang-row{margin-bottom:12px;}
+  .lang-row{margin-bottom:12px;page-break-inside:avoid;break-inside:avoid-page;}
   .lang-row:last-child{margin-bottom:0;}
   .lang-row .lang-label{
     display:flex;
@@ -161,6 +173,25 @@ header{gap:16px;}
   .info-card ul{margin:0;padding-left:18px;}
   .info-card li{font-size:14px;margin-bottom:6px;color:var(--ink);}
   .info-card li:last-child{margin-bottom:0;}
+  
+/* ---------- HABILIDADES (tags compactos) ---------- */
+  .tag-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 8px;
+  }
+  .tag{
+    display:inline-block;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:5px 14px;
+    font-size:13px;
+    font-weight:600;
+    color:var(--ink);
+    line-height:1.2;
+    white-space:nowrap;
+  }
 
   footer{
     margin-top:56px;
@@ -171,3 +202,46 @@ header{gap:16px;}
     text-align:center;
   }
   footer a{color:var(--accent);text-decoration:none;}
+
+  /* ---------- BOTÓN EXPORTAR PDF ---------- */
+  .export-bar{
+    max-width:720px;
+    margin:0 auto;
+    padding:20px 28px 0;
+    display:flex;
+    justify-content:flex-end;
+  }
+  .export-btn{
+    font-family:'Manrope', sans-serif;
+    font-size:13.5px;
+    font-weight:700;
+    letter-spacing:.02em;
+    color:#fff;
+    background:var(--accent);
+    border:none;
+    border-radius:999px;
+    padding:10px 20px;
+    cursor:pointer;
+    box-shadow:0 2px 6px rgba(0,0,0,.12);
+    transition:opacity .15s ease, transform .15s ease;
+  }
+  .export-btn:hover{opacity:.9;}
+  .export-btn:active{transform:scale(.97);}
+  .export-btn:disabled{opacity:.6;cursor:wait;}
+  @media print{
+    .export-bar{display:none;}
+  }
+
+  /* ---------- EVITAR CORTES DE PÁGINA A MITAD DE BLOQUE ---------- */
+  .entry,
+  .info-card,
+  .pkg-group,
+  .lang-row,
+  header{
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+  h2{
+    break-after:avoid;
+    page-break-after:avoid;
+  }
