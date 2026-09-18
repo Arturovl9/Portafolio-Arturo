@@ -2,7 +2,6 @@
     --bg:#F5F6F2;
     --panel:#FFFFFF;
     --ink:#20291F;
-    --muted:#6A756A;
     --accent:#9C4221;
     --accent-soft:#E7CBB9;
     --line:#DBE0D6;
@@ -54,9 +53,9 @@ header{gap:16px;}
 }
 .contact{
     font-size:14px;
-    color:var(--muted);
+    color:var(--ink);
 }
-.contact a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line);}
+.contact a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);}
   .contact a:hover{color:var(--accent);border-color:var(--accent);}
   .contact .sep{margin:0 8px;color:var(--line);}
 
@@ -102,13 +101,15 @@ header{gap:16px;}
     margin-left:auto;
     font-size:13px;
     font-style:italic;
-    color:var(--muted);
+    color:var(--ink);
     white-space:nowrap;
   }
   .entry ul{margin:0;padding-left:20px;}
   .entry li{font-size:14.5px;margin-bottom:5px;color:var(--ink);}
-  .entry-school{font-size:14px;color:var(--muted);}
+  .entry-school{font-size:14px;color:var(--ink);}
 
+
+<<<<<<< HEAD
   /* ---------- HABILIDADES (chips) ---------- */
   .pkg-group{
     margin-bottom:16px;
@@ -134,9 +135,11 @@ header{gap:16px;}
     border-radius:999px;
     color:var(--ink);
   }
+=======
+>>>>>>> 514d820314917bc09ae27674a8b3bc548db65083
 
   /* ---------- SYSTEM INFO ---------- */
-  .info-grid{
+  .info-grid, .pkg-group{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:16px;
@@ -155,7 +158,7 @@ header{gap:16px;}
     font-weight:700;
     letter-spacing:.05em;
     text-transform:uppercase;
-    color:var(--muted);
+    color:var(--ink);
     margin:0 0 12px;
   }
   .lang-row{margin-bottom:12px;page-break-inside:avoid;break-inside:avoid-page;}
@@ -167,7 +170,7 @@ header{gap:16px;}
     font-weight:600;
     margin-bottom:5px;
   }
-  .lang-row .lang-label span:last-child{font-weight:400;color:var(--muted);}
+  .lang-row .lang-label span:last-child{font-weight:400;color:var(--ink);}
   .bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden;}
   .bar > div{height:100%;background:var(--accent);}
   .info-card ul{margin:0;padding-left:18px;}
@@ -193,12 +196,31 @@ header{gap:16px;}
     white-space:nowrap;
   }
 
+  /* ---------- HABILIDADES (tags compactos) ---------- */
+  .tag-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 8px;
+  }
+  .tag{
+    display:inline-block;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:5px 14px;
+    font-size:13px;
+    font-weight:600;
+    color:var(--ink);
+    line-height:1.2;
+    white-space:nowrap;
+  }
+
   footer{
     margin-top:56px;
     padding-top:22px;
     border-top:1px solid var(--line);
     font-size:13px;
-    color:var(--muted);
+    color:var(--ink);
     text-align:center;
   }
   footer a{color:var(--accent);text-decoration:none;}
