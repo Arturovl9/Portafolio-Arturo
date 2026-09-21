@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     btn.disabled = true;
     btn.textContent = 'Generando PDF…';
     btn.classList.add('is-exporting');
+    target.classList.add('pdf-mode');
 
     // Sustituimos temporalmente la foto por su versión cuadrada.
     const srcOriginal = avatar ? avatar.src : null;
@@ -61,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Márgenes de página en mm: [arriba, izquierda, abajo, derecha].
       // Dejan un margen real de impresión en cada hoja A4 en vez de
       // pegar el contenido al borde del PDF.
-      margin: [15, 12, 17, 12],
+      margin: [10, 12, 12, 12],
       filename: 'Arturo_Vega_CV.pdf',
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2, useCORS: true },
@@ -75,6 +76,8 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     };
 
+
+
     html2pdf()
       .set(opciones)
       .from(target)
@@ -84,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('Ha ocurrido un error al generar el PDF. Inténtalo de nuevo.');
       })
       .finally(function () {
-        // Restauramos la foto original y el botón.
+        target.classList.remove('pdf-mode');   // <-- añadir
         if (avatar && srcOriginal) avatar.src = srcOriginal;
         btn.disabled = false;
         btn.textContent = originalLabel;
